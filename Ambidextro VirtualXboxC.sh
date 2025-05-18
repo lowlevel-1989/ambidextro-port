@@ -77,7 +77,7 @@ if [ ! -d "godot" ]; then
 fi
 
 echo VIRTUAL XBOX CONTROLLER
-$GPTOKEYB2 "$godot_executable" -x &
+$GPTOKEYB "$godot_executable" xbox360 &
 
 # Start Westonpack and Godot
 # Put CRUSTY_SHOW_CURSOR=1 after "env" if you need a mouse cursor
