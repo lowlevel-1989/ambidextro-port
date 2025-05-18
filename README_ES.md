@@ -36,7 +36,7 @@ Así que, si quieres disfrutar de este port, lo primero que tienes que hacer es 
 - [x] Rocknix
     -> [x] Panfrost
     -> []  Libmali    <- NO
-- [x] MuOS
+- [~] MuOS             (working)
 - [ ] Knulli           (testing)
 ~~~
 

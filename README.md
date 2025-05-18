@@ -36,7 +36,7 @@ So, if you want to enjoy this port, the first thing you need to do is get the ga
 - [x] Rocknix
     -> [x] Panfrost
     -> []  Libmali    <- NO
-- [x] MuOS
+- [~] MuOS             (working)
 - [ ] Knulli           (testing)
 ~~~
 
