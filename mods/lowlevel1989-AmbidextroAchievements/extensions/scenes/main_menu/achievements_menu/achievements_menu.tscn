@@ -1,0 +1,181 @@
+[gd_scene load_steps=3 format=3 uid="uid://edubjuikswly"]
+
+[ext_resource type="Script" path="res://mods-unpacked/lowlevel1989-AmbidextroAchievements/extensions/scenes/main_menu/achievements_menu/achievements_menu.gd" id="1_upvi6"]
+[ext_resource type="PackedScene" uid="uid://dxmhxgh88panf" path="res://mods-unpacked/lowlevel1989-AmbidextroAchievements/extensions/scenes/main_menu/main_menu_bg/main_menu_bg.tscn" id="2_0sl01"]
+
+[node name="AchievementsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_upvi6")
+
+[node name="MainMenuBG" parent="." instance=ExtResource("2_0sl01")]
+layout_mode = 1
+offset_left = -880.0
+offset_top = -1014.0
+offset_right = 1120.0
+offset_bottom = 986.0
+
+[node name="Container" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -189.5
+offset_top = -71.0
+offset_right = 442.5
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+theme_override_constants/h_separation = 40
+columns = 3
+
+[node name="symmetrical" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SYMMETRICAL"
+uppercase = true
+metadata/oname = "SYMMETRICAL"
+
+[node name="wooden_platform" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] WOODEN PLATFORM"
+uppercase = true
+metadata/oname = "WOODEN PLATFORM"
+
+[node name="spikes" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SPIKES"
+uppercase = true
+metadata/oname = "SPIKES"
+
+[node name="sandstone" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SANDSTONE"
+uppercase = true
+metadata/oname = "SANDSTONE"
+
+[node name="glass" type="Label" parent="Container"]
+layout_mode = 2
+text = "[+] GLASS"
+uppercase = true
+metadata/oname = "GLASS"
+
+[node name="springboard" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SPRINGBOARD"
+uppercase = true
+metadata/oname = "SPRINGBOARD"
+
+[node name="bellows" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] BELLOWS"
+uppercase = true
+metadata/oname = "BELLOWS"
+
+[node name="spike_ball" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SPIKE BALL"
+uppercase = true
+metadata/oname = "SPIKE BALL"
+
+[node name="switch" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SWITCH"
+uppercase = true
+metadata/oname = "SWITCH"
+
+[node name="moving_platform" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] MOVING PLATFORM"
+uppercase = true
+metadata/oname = "MOVING PLATFORM"
+
+[node name="button" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] BUTTON"
+uppercase = true
+metadata/oname = "BUTTON"
+
+[node name="spiked_pendulum" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SPIKED PENDULUM"
+uppercase = true
+metadata/oname = "SPIKED PENDULUM"
+
+[node name="box" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] BOX"
+uppercase = true
+metadata/oname = "BOX"
+
+[node name="smasher" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SMASHER"
+uppercase = true
+metadata/oname = "SMASHER"
+
+[node name="fireball" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] FIREBALL"
+uppercase = true
+metadata/oname = "FIREBALL"
+
+[node name="quantum_platform" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] QUANTUM PLATFORM"
+uppercase = true
+metadata/oname = "QUANTUM PLATFORM"
+
+[node name="directional_block" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] DIRECTIONAL BLOCK"
+uppercase = true
+metadata/oname = "DIRECTIONAL BLOCK"
+
+[node name="toggle_platform" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] TOGGLE PLATFORM"
+uppercase = true
+metadata/oname = "TOGGLE PLATFORM"
+
+[node name="swapper" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SWAPPER"
+uppercase = true
+metadata/oname = "SWAPPER"
+
+[node name="final_stretch" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] FINAL STRETCH"
+uppercase = true
+metadata/oname = "FINAL STRETCH"
+
+[node name="dungeon_master" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] DUNGEON MASTER"
+uppercase = true
+metadata/oname = "DUNGEON MASTER"
+
+[node name="ambidexterity" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] AMBIDEXTERITY"
+uppercase = true
+metadata/oname = "AMBIDEXTERITY"
+
+[node name="speedrun" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] SPEEDRUN"
+uppercase = true
+metadata/oname = "SPEEDRUN"
+
+[node name="retries" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] RETRIES"
+uppercase = true
+metadata/oname = "RETRIES"
+
+[node name="randomizer" type="Label" parent="Container"]
+layout_mode = 2
+text = "[  ] RANDOMIZER"
+uppercase = true
+metadata/oname = "RANDOMIZER"
