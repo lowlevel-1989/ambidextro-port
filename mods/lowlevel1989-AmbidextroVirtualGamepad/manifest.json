@@ -20,13 +20,11 @@
 			"incompatibilities": [],
 			"load_before": [],
 			"optional_dependencies": [],
-			"tags": [
-				"achievements"
-			]
+			"tags": []
 		}
 	},
-	"name": "AmbidextroAchievements",
+	"name": "AmbidextroVirtualGamepad",
 	"namespace": "lowlevel1989",
-	"version_number": "1.0.0",
+	"version_number": "0.3.0",
 	"website_url": "https://github.com/lowlevel-1989/ambidextro-port/tree/master/mods"
 }

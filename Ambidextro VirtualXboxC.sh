@@ -76,8 +76,8 @@ if [ ! -d "godot" ]; then
     rm $game_launcher_setup
 fi
 
-echo VIRTUAL XBOX CONTROLLER
-$GPTOKEYB "$godot_executable" xbox360 &
+echo VIRTUAL CONTROLLER
+$GPTOKEYB2 "$godot_executable" -c "./controls.virtual.ini" &
 
 # Start Westonpack and Godot
 # Put CRUSTY_SHOW_CURSOR=1 after "env" if you need a mouse cursor
