@@ -7,4 +7,11 @@
     <genre>RPG</genre>
     <image>./ambidextro/cover.png</image>
   </game>
+  <game>
+    <path>./Ambidextro VirtualXboxC.sh</path>
+    <name>Ambidextro VirtualXboxC</name>
+    <desc>Ambidextro is a multiplayer for a single player. Learn to control two characters at the same time, one with each hand. Develop your ambidexterity and rescue both the prince and the princess simultaneously.</desc>
+    <genre>RPG</genre>
+    <image>./ambidextro/cover.png</image>
+  </game>
 </gameList>
