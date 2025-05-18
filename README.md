@@ -28,6 +28,18 @@ So, if you want to enjoy this port, the first thing you need to do is get the ga
 - **RAM:** 1 GB  
 - **Console:** Must have **two analog sticks**
 
+## CFW Tests:
+
+~~~
+- [] AmberELEC        (testing)
+- [] ArkOS            (testing)
+- [x] Rocknix
+    -> [x] Panfrost
+    -> []  Libmali    <- NO
+- [] MuOS             (testing)
+- [] Knulli           (testing)
+~~~
+
 ## 1. Install or update the port
 
 Download `ambidextro.zip` and place it into:  
