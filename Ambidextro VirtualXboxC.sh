@@ -81,7 +81,7 @@ $GPTOKEYB "$godot_executable" xbox360 &
 
 # Start Westonpack and Godot
 # Put CRUSTY_SHOW_CURSOR=1 after "env" if you need a mouse cursor
-$ESUDO env $weston_dir/westonwrap.sh headless noop kiosk crusty_x11egl \
+$ESUDO env CRUSTY_BLOCK_INPUT=1 $weston_dir/westonwrap.sh headless noop kiosk crusty_x11egl \
 XDG_DATA_HOME=$CONFDIR $godot_dir/$godot_executable \
 --resolution ${DISPLAY_WIDTH}x${DISPLAY_HEIGHT} -f \
 --script addons/mod_loader/mod_loader_setup.gd \
