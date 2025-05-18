@@ -64,6 +64,9 @@ $ESUDO mount "$controlfolder/libs/${godot_runtime}.squashfs" "${godot_dir}"
 
 cd $GAMEDIR
 
+echo RELEASE
+cat $GAMEDIR/RELEASE
+
 # Setup godot mod loader
 if [ ! -d "godot" ]; then
     cp $godot_dir/$godot_executable $game_launcher_setup
@@ -73,7 +76,13 @@ if [ ! -d "godot" ]; then
     rm $game_launcher_setup
 fi
 
-$GPTOKEYB2 "$godot_executable" -c "./controls.ini" &
+if $GAMEDIR/controller_info | grep -iq 'guid'; then
+  echo CONTROLLER NATIVE
+  $GPTOKEYB2 "$godot_executable" -c "./controls.native.ini" &
+else
+  echo VIRTUAL XBOX CONTROLLER
+  $GPTOKEYB2 "$godot_executable" -x &
+fi
 
 # Start Westonpack and Godot
 # Put CRUSTY_SHOW_CURSOR=1 after "env" if you need a mouse cursor

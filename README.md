@@ -31,13 +31,13 @@ So, if you want to enjoy this port, the first thing you need to do is get the ga
 ## CFW Tests:
 
 ~~~
-- [] AmberELEC        (testing)
-- [] ArkOS            (testing)
+- [ ] AmberELEC        (testing)
+- [ ] ArkOS            (testing)
 - [x] Rocknix
     -> [x] Panfrost
     -> []  Libmali    <- NO
-- [] MuOS             (testing)
-- [] Knulli           (testing)
+- [x] MuOS
+- [ ] Knulli           (testing)
 ~~~
 
 ## 1. Install or update the port
