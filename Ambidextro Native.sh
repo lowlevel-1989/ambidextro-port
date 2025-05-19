@@ -76,12 +76,16 @@ if [ ! -d "godot" ]; then
     rm $game_launcher_setup
 fi
 
-echo VIRTUAL CONTROLLER
-$GPTOKEYB2 "$godot_executable" -c "./controls.virtual.ini" &
+export SDL_GAMECONTROLLERCONFIG="$sdl_controllerconfig"
+
+echo CONTROLLER NATIVE
+$GAMEDIR/controller_info.$DEVICE_ARCH
+echo $SDL_GAMECONTROLLERCONFIG
+$GPTOKEYB2 "$godot_executable" -c "./controls.native.ini" &
 
 # Start Westonpack and Godot
 # Put CRUSTY_SHOW_CURSOR=1 after "env" if you need a mouse cursor
-$ESUDO env CRUSTY_BLOCK_INPUT=1 $weston_dir/westonwrap.sh headless noop kiosk crusty_x11egl \
+$ESUDO env $weston_dir/westonwrap.sh headless noop kiosk crusty_x11egl \
 XDG_DATA_HOME=$CONFDIR $godot_dir/$godot_executable \
 --resolution ${DISPLAY_WIDTH}x${DISPLAY_HEIGHT} -f \
 --script addons/mod_loader/mod_loader_setup.gd \

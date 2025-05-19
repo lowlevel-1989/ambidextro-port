@@ -14,6 +14,14 @@ func _init() -> void:
 	extensions_dir_path = mod_dir_path.path_join("extensions")
 
 	ModLoaderLog.info("Init", LOG_NAME)
+	
+	var action_name = "_show_fps"
+	if not InputMap.has_action(action_name):
+		InputMap.add_action(action_name)
+		
+		var key_event := InputEventKey.new()
+		key_event.physical_keycode = KEY_0
+		InputMap.action_add_event(action_name, key_event)
 
 	ModLoaderMod.install_script_extension(
 		extensions_dir_path.path_join("scenes/main/fps_counter.gd"))

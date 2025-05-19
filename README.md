@@ -37,7 +37,7 @@ So, if you want to enjoy this port, the first thing you need to do is get the ga
 - [x] MuOS
 - [ ] AmberELEC        (testing)
 - [ ] ArkOS            (testing)
-- [ ] Knulli           (testing)
+- [x] Knulli
 ~~~
 
 ## 1. Install or update the port
@@ -55,6 +55,7 @@ Copy the file `Ambidextro.pck` into the folder:
 ## Thanks
 
 - [Alva Majo](https://www.majorariatto.com/)  
+- [Damian2809](https://github.com/Damian2809)
 - [PortMaster](https://github.com/PortsMaster)  
 - [Godot Mod Loader](https://github.com/GodotModding/godot-mod-loader)
 

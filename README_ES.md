@@ -37,7 +37,7 @@ Así que, si quieres disfrutar de este port, lo primero que tienes que hacer es 
 - [x] MuOS
 - [ ] AmberELEC        (testing)
 - [ ] ArkOS            (testing)
-- [ ] Knulli           (testing)
+- [x] Knulli
 ~~~
 
 ## 1. Instalar o actualizar el port
@@ -54,5 +54,6 @@ copiar el archivo `Ambidextro.pck` dentro de la carpeta `/roms/ports/ambidextro/
 ## Agradecimientos
 
 - [Alva Majo](https://www.majorariatto.com/)
+- [Damian2809](https://github.com/Damian2809)
 - [PortMaster](https://github.com/PortsMaster)
 - [Godot Mod Loader](https://github.com/GodotModding/godot-mod-loader)
