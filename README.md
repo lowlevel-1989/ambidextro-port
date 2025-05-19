@@ -56,6 +56,7 @@ Copy the file `Ambidextro.pck` into the folder:
 
 - [Alva Majo](https://www.majorariatto.com/)  
 - [Damian2809](https://github.com/Damian2809)
+- [BinaryCounter](https://github.com/binarycounter)
 - [PortMaster](https://github.com/PortsMaster)  
 - [Godot Mod Loader](https://github.com/GodotModding/godot-mod-loader)
 
