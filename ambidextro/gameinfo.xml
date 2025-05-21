@@ -8,9 +8,16 @@
     <image>./ambidextro/cover.png</image>
   </game>
   <game>
-    <path>./Ambidextro Native.sh</path>
-    <name>Ambidextro Native</name>
-    <desc>Ambidextro is a multiplayer for a single player. Learn to control two characters at the same time, one with each hand. Develop your ambidexterity and rescue both the prince and the princess simultaneously.</desc>
+    <path>./Ambidextro native.sh</path>
+    <name>Ambidextro native</name>
+    <desc>Some devices require button mapping from the options menu.</desc>
+    <genre>RPG</genre>
+    <image>./ambidextro/cover.png</image>
+  </game>
+  <game>
+    <path>./Ambidextro lightweight.sh</path>
+    <name>Ambidextro lightweight</name>
+    <desc>Some devices require button mapping from the options menu.</desc>
     <genre>RPG</genre>
     <image>./ambidextro/cover.png</image>
   </game>

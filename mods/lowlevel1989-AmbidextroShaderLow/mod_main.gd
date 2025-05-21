@@ -28,3 +28,7 @@ func _init() -> void:
 
 	var oshader = preload("res://shaders/CRT2/crt_material2.tres")
 	oshader.shader = preload("res://mods-unpacked/lowlevel1989-AmbidextroShaderLow/crt.gdshader")
+
+	if OS.has_environment("SHADER_PASSTHROUGH"):
+		ModLoaderLog.info("SHADER_PASSTHROUGH", LOG_NAME)
+		oshader.shader = preload("res://mods-unpacked/lowlevel1989-AmbidextroShaderLow/passthrough.gdshader")
