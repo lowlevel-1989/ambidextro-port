@@ -3,8 +3,6 @@
   "name": "ambidextro.zip",
   "items": [
     "Ambidextro.sh",
-    "Ambidextro native.sh",
-    "Ambidextro lightweight.sh",
     "ambidextro"
   ],
   "items_opt": [],

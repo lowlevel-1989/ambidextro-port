@@ -7,18 +7,4 @@
     <genre>RPG</genre>
     <image>./ambidextro/cover.png</image>
   </game>
-  <game>
-    <path>./Ambidextro native.sh</path>
-    <name>Ambidextro native</name>
-    <desc>Some devices require button mapping from the options menu.</desc>
-    <genre>RPG</genre>
-    <image>./ambidextro/cover.png</image>
-  </game>
-  <game>
-    <path>./Ambidextro lightweight.sh</path>
-    <name>Ambidextro lightweight</name>
-    <desc>Some devices require button mapping from the options menu.</desc>
-    <genre>RPG</genre>
-    <image>./ambidextro/cover.png</image>
-  </game>
 </gameList>

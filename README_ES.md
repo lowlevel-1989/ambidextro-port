@@ -1,10 +1,8 @@
-| Archivo                    | Descripción                                                                                                                      | Características principales                                     |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
-| **Ambidextro.sh**          | Utiliza un control virtual y es el más compatible con todos los CFW disponibles.                                                | Control virtual, alta compatibilidad con todos los CFW.         |
-| **Ambidextro native.sh**   | Emplea el control nativo del motor del juego, ofreciendo mayor precisión. En algunos dispositivos, requiere remapeo manual desde el menú del juego y puede no funcionar correctamente en ciertos CFW. | Control nativo, mayor precisión, puede requerir remapeo manual y presenta limitaciones en algunos CFW. |
-| **Ambidextro lightweight.sh** | No aplica efectos adicionales y está optimizado para consolas clon con recursos limitados.                                        | Sin efectos, optimizado para consolas con hardware restringido. |
-
-> **Nota:** La versión *lightweight* por defecto utiliza el control nativo. Si el control no responde en tu CFW, abre el archivo y modifica la línea 18, cambiando el valor a `USE_VIRTUAL_CONTROL=1` para asignar el control virtual. Ten en cuenta que esto puede reducir el rendimiento y se recomienda cambiar a un CFW que soporte control nativo para un mejor desempeño.
+| Modo                        | Características principales                                                                         |
+|-----------------------------|-----------------------------------------------------------------------------------------------------|
+| **Ambidextro Virtual Control**    | Control virtual, alta compatibilidad con todos los CFW.                                          |
+| **Ambidextro Native Control**     | Control nativo, mayor precisión, puede requerir reasignación manual, compatibilidad limitada con algunos CFW. |
+| **Ambidextro Lightweight**        | Sin efectos, optimizado para consolas con hardware limitado.                                     |
 
 ## Notas importantes
 

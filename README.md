@@ -1,10 +1,8 @@
-| File                        | Description                                                                                                                        | Main Features                                                 |
-|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
-| **Ambidextro.sh**            | Uses virtual control and is the most compatible with all available CFWs.                                                          | Virtual control, high compatibility across all CFWs.         |
-| **Ambidextro native.sh**     | Uses the game engine's native control, offering higher precision. On some devices, it requires manual button remapping from the game's options menu and may not work properly on certain CFWs. | Native control, higher precision, may need manual remapping, limited support on some CFWs. |
-| **Ambidextro lightweight.sh**| Applies no additional effects and is optimized for clone consoles with limited resources.                                          | No effects, optimized for consoles with restricted hardware.  |
-
-> **Note:** The *lightweight* version defaults to using native control. If the control does not respond in your CFW, open the file and modify line 18 by setting `USE_VIRTUAL_CONTROL=1` to enable virtual control. Keep in mind this may reduce performance, and it is recommended to switch to a CFW that supports native control for better results.
+| Mode                        | Main Features                                                 |
+|-----------------------------|---------------------------------------------------------------|
+| **Ambidextro Virtual Control**            | Virtual control, high compatibility across all CFWs.         |
+| **Ambidextro Native  Control**     | Native control, higher precision, may need manual remapping, limited support on some CFWs. |
+| **Ambidextro lightweight**| No effects, optimized for consoles with restricted hardware.  |
 
 ## Important Notes
 
