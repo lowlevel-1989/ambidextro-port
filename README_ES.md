@@ -4,6 +4,8 @@
 | **Ambidextro Native Control**     | Control nativo, mayor precisión, puede requerir reasignación manual, compatibilidad limitada con algunos CFW. |
 | **Ambidextro Lightweight**        | Sin efectos, optimizado para consolas con hardware limitado.                                     |
 
+> **Nota:** La versión *lightweight* usa por defecto el control nativo. Si se utiliza control virtual, el rendimiento puede verse **reducido**, especialmente en consolas con recursos limitados. Para mejores resultados, se recomienda usar un CFW compatible con el control nativo.
+
 ## Notas importantes
 
 - En consolas clones con pocos recursos, durante los primeros niveles puedes experimentar bajones de FPS hasta que el juego termine de cachear todos sus datos. Después de esto, el juego debería funcionar con normalidad.
