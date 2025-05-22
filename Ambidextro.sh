@@ -124,6 +124,8 @@ esac
 echo KILL $__pid_control
 kill $__pid_control
 
+sleep 2
+
 echo INFO CONTROLLER
 $GAMEDIR/controller_info.$DEVICE_ARCH
 echo $SDL_GAMECONTROLLERCONFIG
