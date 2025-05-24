@@ -25,6 +25,6 @@
 	},
 	"name": "AmbidextroVirtualGamepad",
 	"namespace": "lowlevel1989",
-	"version_number": "0.3.0",
+	"version_number": "0.4.0",
 	"website_url": "https://github.com/lowlevel-1989/ambidextro-port/tree/master/mods"
 }

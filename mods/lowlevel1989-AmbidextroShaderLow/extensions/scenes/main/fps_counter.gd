@@ -7,7 +7,11 @@ var _already_triggered := false
 func _process(delta):
 	super(delta)
 	
-	_action_1_pressed = Input.is_action_pressed("_show_fps")
+	var action_name = "_show_fps"
+	if not InputMap.has_action(action_name):
+		return
+	
+	_action_1_pressed = Input.is_action_pressed(action_name)
 	
 	if _action_1_pressed and not _already_triggered:
 		_already_triggered = true

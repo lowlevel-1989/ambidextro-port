@@ -49,7 +49,7 @@ So, if you want to enjoy this port, the first thing you need to do is get the ga
     -> []  Libmali    <- NO
 - [x] MuOS
 - [ ] AmberELEC        (testing)
-- [ ] ArkOS            (testing)
+- [x] ArkOS
 - [x] Knulli
 ~~~
 

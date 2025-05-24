@@ -14,3 +14,6 @@ all: $(TARGET)
 
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) -o $(TARGET) $(SRC) $(LDFLAGS)
+
+clean:
+	rm -rf launch_menu.x86_64 launch_menu.aarch64

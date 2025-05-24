@@ -49,7 +49,7 @@ Así que, si quieres disfrutar de este port, lo primero que tienes que hacer es 
     -> []  Libmali    <- NO
 - [x] MuOS
 - [ ] AmberELEC        (testing)
-- [ ] ArkOS            (testing)
+- [x] ArkOS
 - [x] Knulli
 ~~~
 

@@ -1,6 +1,9 @@
-# Menu Launcher for Portmaster v0.1.0
+# Menu Launcher for Portmaster v0.2.0
 
 This is a menu launcher for Portmaster that allows selecting configurable options through a `menu.items` file.
+
+- supported: custom menu.items
+- supported: Joystick Mapper
 
 ---
 
@@ -35,12 +38,26 @@ Each line represents a menu option shown to the user.
 To integrate this menu into your Portmaster launcher, add the following to your script:
 
 ```bash
-$GPTOKEYB2 -c "./menu/controls.ini" &
-__pid_control=$!
+export SDL_GAMECONTROLLERCONFIG="$sdl_controllerconfig"
+
+if [ -n "$ESUDO" ]; then
+  ESUDO="${ESUDO},SDL_GAMECONTROLLERCONFIG"
+fi
+
+# MENU
+$GPTOKEYB2 "launch_menu" -c "./menu/controls.ini" &
 $GAMEDIR/menu/launch_menu.$DEVICE_ARCH $GAMEDIR/menu/menu.items $GAMEDIR/menu/FiraCode-Regular.ttf
 
 # Capture the exit code
 selection=$?
+
+if [ -f "$GAMEDIR/controller.map" ]; then
+    echo load controller.map
+    export SDL_GAMECONTROLLERCONFIG="$(cat $GAMEDIR/controller.map)"
+    echo $SDL_GAMECONTROLLERCONFIG
+fi
+
+env_vars=""
 
 # Check what was selected
 case $selection in
@@ -54,21 +71,23 @@ case $selection in
         exit 1
         ;;
     2)
-        echo "[MENU] Virtual Control"
-        control_subfix="virtual"
-        ;;
-    3)
         echo "[MENU] Native Control"
         control_subfix="native"
         ;;
+    3)
+        echo "[MENU] Virtual Control"
+        env_vars="$env_vars CRUSTY_BLOCK_INPUT=1"
+        control_subfix="virtual"
+        ;;
     4)
-        echo "[MENU] Lightweight"
-        export SHADER_PASSTHROUGH=
+        echo "[MENU] Lightweight Native Control"
+        env_vars="$env_vars SHADER_PASSTHROUGH="
         ;;
     5)
         echo "[MENU] Lightweight Virtual Control"
+        env_vars="$env_vars CRUSTY_BLOCK_INPUT=1"
+        env_vars="$env_vars SHADER_PASSTHROUGH="
         control_subfix="virtual"
-        export SHADER_PASSTHROUGH=
         ;;
     *)
         echo "[MENU] Unknown option: $selection"
@@ -76,10 +95,14 @@ case $selection in
         exit 3
         ;;
 esac
-echo KILL $__pid_control
-kill $__pid_control
 
-sleep 2
+__pids=$(ps aux | grep '[g]ptokeyb2' | grep '\-Z launch_menu' | awk '{print $2}')
+
+if [ -n "$__pids" ]; then
+  $ESUDO kill $__pids
+fi
+
+sleep 3
 ```
 
 ---

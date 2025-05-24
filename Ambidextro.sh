@@ -78,14 +78,28 @@ fi
 
 export SDL_GAMECONTROLLERCONFIG="$sdl_controllerconfig"
 
-# MENU
+if [ -n "$ESUDO" ]; then
+  ESUDO="${ESUDO},SDL_GAMECONTROLLERCONFIG"
+fi
 
-$GPTOKEYB2 -c "./menu/controls.ini" &
-__pid_control=$!
+echo INFO CONTROLLER
+$GAMEDIR/controller_info.$DEVICE_ARCH
+echo $SDL_GAMECONTROLLERCONFIG
+
+# MENU
+$GPTOKEYB2 "launch_menu" -c "./menu/controls.ini" &
 $GAMEDIR/menu/launch_menu.$DEVICE_ARCH $GAMEDIR/menu/menu.items $GAMEDIR/menu/FiraCode-Regular.ttf
 
 # Capture the exit code
 selection=$?
+
+if [ -f "$GAMEDIR/controller.map" ]; then
+    echo load controller.map
+    export SDL_GAMECONTROLLERCONFIG="$(cat $GAMEDIR/controller.map)"
+    echo $SDL_GAMECONTROLLERCONFIG
+fi
+
+env_vars=""
 
 # Check what was selected
 case $selection in
@@ -99,21 +113,23 @@ case $selection in
         exit 1
         ;;
     2)
-        echo "[MENU] Virtual Control"
-        control_subfix="virtual"
-        ;;
-    3)
         echo "[MENU] Native Control"
         control_subfix="native"
         ;;
+    3)
+        echo "[MENU] Virtual Control"
+        env_vars="$env_vars CRUSTY_BLOCK_INPUT=1"
+        control_subfix="virtual"
+        ;;
     4)
-        echo "[MENU] Lightweight"
-        export SHADER_PASSTHROUGH=
+        echo "[MENU] Lightweight Native Control"
+        env_vars="$env_vars SHADER_PASSTHROUGH="
         ;;
     5)
         echo "[MENU] Lightweight Virtual Control"
+        env_vars="$env_vars CRUSTY_BLOCK_INPUT=1"
+        env_vars="$env_vars SHADER_PASSTHROUGH="
         control_subfix="virtual"
-        export SHADER_PASSTHROUGH=
         ;;
     *)
         echo "[MENU] Unknown option: $selection"
@@ -121,29 +137,27 @@ case $selection in
         exit 3
         ;;
 esac
-echo KILL $__pid_control
-kill $__pid_control
 
-sleep 2
+__pids=$(ps aux | grep '[g]ptokeyb2' | grep '\-Z launch_menu' | awk '{print $2}')
 
-echo INFO CONTROLLER
-$GAMEDIR/controller_info.$DEVICE_ARCH
-echo $SDL_GAMECONTROLLERCONFIG
+if [ -n "$__pids" ]; then
+  echo "KILL: $__pids"
+  $ESUDO kill $__pids
+fi
+
+sleep 3
+
+echo ESUDO=$ESUDO
+echo env_vars=$env_vars
 
 if [[ -n "$control_subfix" ]]; then
     $GPTOKEYB2 "$godot_executable" -c "./controls.$control_subfix.ini" &
 fi
 
-env_vars=""
-
-if [[ "$control_subfix" == "virtual" ]]; then
-    env_vars="CRUSTY_BLOCK_INPUT=1"
-fi
-
 # Start Westonpack and Godot
 # Put CRUSTY_SHOW_CURSOR=1 after "env" if you need a mouse cursor
-$ESUDO env $env_vars $weston_dir/westonwrap.sh headless noop kiosk crusty_x11egl \
-XDG_DATA_HOME=$CONFDIR $godot_dir/$godot_executable \
+$ESUDO env $weston_dir/westonwrap.sh headless noop kiosk crusty_x11egl \
+XDG_DATA_HOME=$CONFDIR $env_vars $godot_dir/$godot_executable \
 --resolution ${DISPLAY_WIDTH}x${DISPLAY_HEIGHT} -f \
 --script addons/mod_loader/mod_loader_setup.gd \
 --setup-create-override-cfg \
