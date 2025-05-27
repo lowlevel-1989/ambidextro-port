@@ -25,8 +25,13 @@ func _init() -> void:
 		file.store_line(uuid)
 		file.close()
 	
+	ModLoaderLog.info("Ambidextro v%s %s" % [Global.version, Global.years], LOG_NAME)
+	ModLoaderLog.info("Ambidextro steam version %s" % Global.steam, LOG_NAME)
+	
 	# disable steam
 	Global.steam = false
+	
+	ModLoaderLog.info("Ambidextro set steam version = %s" % Global.steam, LOG_NAME)
 	
 	# Add extensions
 	install_script_extensions()

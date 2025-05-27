@@ -76,11 +76,16 @@ if [ ! -d "godot" ]; then
     rm $game_launcher_setup
 fi
 
+md5sum $GAMEDIR/$pck_filename
+
 export SDL_GAMECONTROLLERCONFIG="$sdl_controllerconfig"
 
 if [ -n "$ESUDO" ]; then
   ESUDO="${ESUDO},SDL_GAMECONTROLLERCONFIG"
 fi
+
+$ESUDO chmod +x $GAMEDIR/controller_info.$DEVICE_ARCH
+$ESUDO chmod +x $GAMEDIR/menu/launch_menu.$DEVICE_ARCH
 
 echo INFO CONTROLLER
 $GAMEDIR/controller_info.$DEVICE_ARCH
