@@ -48,7 +48,7 @@ So, if you want to enjoy this port, the first thing you need to do is get the ga
     -> [x] Panfrost
     -> []  Libmali    <- NO
 - [x] MuOS
-- [ ] AmberELEC        (testing)
+- [x] AmberELEC
 - [x] ArkOS
 - [x] Knulli
 ~~~

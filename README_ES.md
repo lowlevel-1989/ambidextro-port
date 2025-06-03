@@ -48,7 +48,7 @@ Así que, si quieres disfrutar de este port, lo primero que tienes que hacer es 
     -> [x] Panfrost
     -> []  Libmali    <- NO
 - [x] MuOS
-- [ ] AmberELEC        (testing)
+- [x] AmberELEC
 - [x] ArkOS
 - [x] Knulli
 ~~~
