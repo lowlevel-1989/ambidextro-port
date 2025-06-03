@@ -35,6 +35,11 @@ Así que, si quieres disfrutar de este port, lo primero que tienes que hacer es 
     Este mod incluye su propio sistema de guardado, por lo que los logros desbloqueados en la versión de PC no se sincronizarán a menos que tengas este mismo mod activo.  
     Puedes consultar los logros disponibles en la [página de logros de Steam](https://steamcommunity.com/stats/3445580/achievements).
 
+### Más Mods para Ambidextro
+
+Si buscas más mods para mejorar tu experiencia en Ambidextro, visita el [repositorio de Ambidextro Mods](https://github.com/lowlevel-1989/ambidextro-mods?tab=readme-ov-file#-mods-para-ambidextro).
+Ahí encontrarás varios mods, incluyendo logros y mejoras en el gameplay.
+
 ## Requisitos de hardware
 
 - **CPU:** AArch64  
