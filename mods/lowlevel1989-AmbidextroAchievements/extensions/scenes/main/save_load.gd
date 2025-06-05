@@ -5,7 +5,6 @@ var uuid = null
 func _ready():
 	_save_data = SaveData.new()
 	
-	
 	if FileAccess.file_exists("user://user.bin"):
 		var file = FileAccess.open("user://user.bin", FileAccess.READ)
 		uuid = file.get_line()
@@ -28,7 +27,7 @@ func save_data(value_name: String, value):
 func load_data():
 	if FileAccess.file_exists("user://data.bin"):
 		create_default_data()
-		
+		load_settings()
 		var file = FileAccess.open_encrypted_with_pass(
 			"user://data.bin", FileAccess.READ, uuid)
 		if file:
