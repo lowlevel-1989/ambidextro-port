@@ -152,8 +152,9 @@ case $selection in
         ;;
     *)
         echo "[MENU] Unknown option: $selection"
-        pm_finish
-        exit 3
+        env_vars="$env_vars CRUSTY_BLOCK_INPUT=1"
+        env_vars="$env_vars SHADER_PASSTHROUGH="
+        control_subfix="virtual"
         ;;
 esac
 

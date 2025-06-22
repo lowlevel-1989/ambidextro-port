@@ -20,6 +20,7 @@
 #include <SDL2/SDL_ttf.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <errno.h>
 #include <string.h>
 #include <stdlib.h>
 #include <linux/input.h>
@@ -27,8 +28,8 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 
-#define MAX_KEY 512
-#define MAX_ABS 64
+#define MAX_KEY 2048
+#define MAX_ABS 2048
 #define MAX_EVENT_DEVICES 32
 #define BSWAP16(x) ((__u16)(((x) << 8) | ((x) >> 8)))
 #define NBITS(x) ((((x)-1)/8/sizeof(long))+1)
@@ -160,26 +161,39 @@ int normalize_axis(int value, int min, int max) {
   return (int)(scaled * 32767);
 }
 
+
 int open_joystick_device() {
+  printf("Opening joystick device...\n");
   for (int i = 0; i < 32; i++) {
     char path[256];
     sprintf(path, "/dev/input/event%d", i);
+    printf("Trying input device: %s\n", path);
     int fd = open(path, O_RDONLY | O_NONBLOCK);
-    if (fd < 0) continue;
+    if (fd < 0) {
+      if (errno != EACCES) {
+        printf("Failed to open %s: %s\n", path, strerror(errno));
+      }
+      continue;
+    }
 
     unsigned long evbit[NBITS(EV_MAX)] = {0};
     if (ioctl(fd, EVIOCGBIT(0, sizeof(evbit)), evbit) < 0 || 
         !test_bit(EV_ABS, evbit) || !test_bit(EV_KEY, evbit)) {
+      printf("Device %s doesn't have required capabilities\n", path);
       close(fd);
       continue;
     }
+    printf("Using input device: %s\n", path);
     return fd;
   }
+  printf("No suitable joystick device found\n");
   return -1;
 }
 
 // GODOT: map code event
 void setup_joypad_properties(int fd) {
+  printf("Setting up joypad properties for fd: %d\n", fd);
+
   unsigned long keybit[NBITS(KEY_MAX)] = { 0 };
   unsigned long absbit[NBITS(ABS_MAX)] = { 0 };
 
@@ -628,6 +642,10 @@ void joystick_mapper_SDL(SDL_Renderer *renderer, TTF_Font *font) {
 }
 
 int main(int argc, char *argv[]) {
+
+  // Forzar vaciamiento inmediato del buffer de salida
+  setvbuf(stdout, NULL, _IONBF, 0);
+  setvbuf(stderr, NULL, _IONBF, 0);
 
   bool godot_flag = false;
   const char *menu_file = NULL;

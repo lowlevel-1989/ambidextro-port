@@ -48,6 +48,11 @@ fi
 $GPTOKEYB2 "launch_menu" -c "./menu/controls.ini" &
 $GAMEDIR/menu/launch_menu.$DEVICE_ARCH $GAMEDIR/menu/menu.items $GAMEDIR/menu/FiraCode-Regular.ttf
 
+# MENU for GODOT
+$GPTOKEYB2 "launch_menu" -c "./menu/controls.ini" &
+$GAMEDIR/menu/launch_menu.$DEVICE_ARCH $GAMEDIR/menu/menu.items $GAMEDIR/menu/FiraCode-Regular.ttf --godot
+
+
 # Capture the exit code
 selection=$?
 
@@ -96,7 +101,7 @@ case $selection in
         ;;
 esac
 
-__pids=$(ps aux | grep '[g]ptokeyb2' | grep '\-Z launch_menu' | awk '{print $2}')
+__pids=$(ps aux | grep '[g]ptokeyb2' | grep 'launch_menu' | awk '{print $2}')
 
 if [ -n "$__pids" ]; then
   $ESUDO kill $__pids
